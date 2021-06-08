@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather App</title>
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="main();" id="main" >
+    
+    <main>
+        <div class="content">
+            <div class="left-data">
+                <div class="header">
+                    <h1>My Weather App</h1>
+                </div>
+                <div class="weather">
+                    <div class="temprature">
+                        <h2><span id="temp">16</span>&#176;</h2>
+                    </div>
+                    <div class="data">
+                        <h1 class="bold" id="place">London</h1>
+                        <p class="small-text" id="time">
+                            <!-- <span id="time">17:87</span>-Staruday, 10 Jun '21 -->
+                        </p>
+                    </div>
+                    <div class="icon">
+                        <img width="50px" id="weather-icon" src="https://img.icons8.com/emoji/48/000000/sun-behind-small-cloud.png"/>
+                        <p class="small-text" id="desc">Clear Sunny</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- weather data -->
+
+        
+        <div class="right-data">
+            <div class="search-btn">
+                <button onclick="serachCity()" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="container">
+                <div class="search">
+                    <input type="search" name="search" id="search" placeholder="Another Location">
+                </div>
+                <div class="cites">
+                    <a onclick="cityMumbai()" href="#" class="color-tranparent"><h2 id="mumbai">Mumbai</h2></a>
+                    <a onclick="cityBangalore()" href="#" class="color-tranparent"><h2 id="bangalore">Bangalore</h2></a>
+                    <a onclick="cityHyderabad()" href="#" class="color-tranparent"><h2 id="hyderabad">Hyderabad</h2></a>
+                    <a onclick="cityAmaravati()" href="#" class="color-tranparent"><h2 id="amaravati">Amaravati</h2></a>
+                    <!-- <hr> -->
+                </div>
+                <div class="weather-details">
+                    <h1>Weather Details</h1>
+                    <div class="details">
+                        <div class="cloudy weather-data">
+                            <h2 class="color-tranparent">Cloudy</h2>
+                            <h2 id="cloud-data" class="color-white">86%</h2>
+                        </div>
+                        <div class="humidity weather-data">
+                            <h2 class="color-tranparent">Humidity</h2>
+                            <h2 id="humidity-data" class="color-white">62%</h2>
+                        </div>
+                        <div class="wind weather-data">
+                            <h2 class="color-tranparent">Wind</h2>
+                            <h2 id="wind-data" class="color-white">8m/s</h2>
+                        </div>
+                        <!-- <div class="rain weather-data">
+                            <h2 class="color-tranparent">Rain</h2>
+                            <h2 id="rain-data" class="color-white">8mm</h2>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./resources/scripts/script.js"></script>
+
+</body>
+</html>
