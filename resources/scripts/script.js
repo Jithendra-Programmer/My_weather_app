@@ -3,6 +3,15 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep"
 const weekNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const apiKey = "d622919847961a1831d9f1eadec9225c";
 
+let isDay = "ture";
+
+if (new Date().getHours() > 6 && new Date().getHours() < 20) {
+    isDay = true;
+}
+else {
+    isDay = "false";
+}
+
 function startTimer(){
     var refresh=1000; // Refresh rate in milli seconds
     mytime=setTimeout('displayTime()',refresh)
@@ -72,7 +81,13 @@ function weatherData(city) {
         document.getElementById("humidity-data").innerHTML = humidityData + "%";
         document.getElementById("wind-data").innerHTML = windData + "m/s";
 
-        if (tempValue >= 34) {
+        if (isDay === "false") {
+            document.getElementById("weather-icon").src = "https://img.icons8.com/fluent/96/000000/fog-day.png";
+            document.getElementById("main").style.backgroundImage = "url('./resources/images/background-night.jpg')";
+            console.log("It's night")
+        }
+
+        else if (tempValue >= 34) {
             document.getElementById("weather-icon").src = "https://img.icons8.com/emoji/48/000000/sun-behind-small-cloud.png";
             document.getElementById("main").style.backgroundImage = "url('./resources/images/background.jpg')";
         }
@@ -82,9 +97,7 @@ function weatherData(city) {
         }
         else if(tempValue < 26) {
 
-            let hours = new Date().getHours();
-
-            if (hours > 6 && hours < 20) {
+            if (new Date().getHours() > 6 && new Date().getHours() < 20) {
                 document.getElementById("weather-icon").src = "https://img.icons8.com/officel/80/000000/downpour.png";
                 document.getElementById("main").style.backgroundImage = "url('./resources/images/background-rainy.jpg')";
             }
@@ -95,10 +108,33 @@ function weatherData(city) {
         }
 
     })
+    .catch((err) => {
+        openModal();
+        console.log(err)
+    })
 }
 
 function main() {
 
     weatherData("chittoor");
     displayTime();
+}
+
+
+function openModal() {
+    document.getElementById("modal").style.display = "block";
+    let cityName = document.getElementById("search").value;
+    document.getElementById("city-modal").innerHTML = cityName;
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function closeOuterArea(event) {
+
+    if (event.target.className == "modal"){
+        document.getElementById("modal").style.display = "none";
+
+    }
 }
