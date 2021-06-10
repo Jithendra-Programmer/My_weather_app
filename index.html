@@ -9,18 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body onload="main();" id="main" >
-    
-    <!-- <div id="modal" class="modal">
-        <div class="modal-content">
-            <div class="heading">
-                <h2>ERROR</h2>
-                <div class="close">
-                    <button class="modal-btn">x</button>
-                </div>
-            </div>
-            <p>city <span id="city-modal">city</span> not fonud</p>
-        </div>
-    </div> -->
 
     <main>
         <div class="content">
@@ -40,7 +28,7 @@
                     </div>
                     <div class="icon">
                         <img width="50px" id="weather-icon" src="https://img.icons8.com/emoji/48/000000/sun-behind-small-cloud.png"/>
-                        <p class="small-text" id="desc">Clear Sunny</p>
+                        <span class="small-text" id="desc">Clear Sunny</span>
                     </div>
                 </div>
             </div>
@@ -55,9 +43,9 @@
             </div>
             <div class="container">
                 <div class="search">
-                    <input type="search" name="search" id="search" placeholder="Another Location">
+                    <input onsubmit="alert('It is working')" type="search" name="search" id="search" placeholder="Another Location">
                 </div>
-                <div class="cites">
+                <div class="cites font-size">
                     <a onclick="cityMumbai()" href="#" class="color-tranparent"><h2 id="mumbai">Mumbai</h2></a>
                     <a onclick="cityBangalore()" href="#" class="color-tranparent"><h2 id="bangalore">Bangalore</h2></a>
                     <a onclick="cityHyderabad()" href="#" class="color-tranparent"><h2 id="hyderabad">Hyderabad</h2></a>
@@ -66,7 +54,7 @@
                 </div>
                 <div class="weather-details">
                     <h1>Weather Details</h1>
-                    <div class="details">
+                    <div class="details font-size">
                         <div class="cloudy weather-data">
                             <h2 class="color-tranparent">Cloudy</h2>
                             <h2 id="cloud-data" class="color-white">86%</h2>
